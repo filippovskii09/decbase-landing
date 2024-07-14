@@ -1,0 +1,29 @@
+@import "./null.css";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*, html ,body {
+	font-family: "Open Sans", sans-serif;	
+	font-size: 18px;
+	line-height: 28px;
+}
+html, body, #app {
+	height: 100%;
+}
+.container {
+	max-width: 1397px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+.btn {
+	color: #fff;	
+	border-radius: 15px 0px 15px 0px;	
+	transition: all 0.3s ease-in-out 0s;
+}
+.btn:hover {
+	transition: all 0.3s ease-in-out 0s;
+	border-radius: 15px;	
+}
