@@ -1,9 +1,11 @@
 <script>
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from "swiper/vue";
+import { Navigation } from 'swiper/modules';
 
 // Import Swiper styles
 import "swiper/css";
+import "swiper/css/navigation";
 
 export default {
   components: {
@@ -20,6 +22,7 @@ export default {
     return {
       onSwiper,
       onSlideChange,
+			modules: [Navigation],
     };
   },
 };
@@ -31,8 +34,9 @@ export default {
       <h4>WHAT WE DO</h4>
       <h2>Our Service</h2>
       <swiper
-        :slides-per-view="2"
-        :space-between="37"
+				:modules="modules"        
+				:slides-per-view="2"
+        :space-between="15"
 				:breakpoints="{
 					768: {
         		slidesPerView: 3,
@@ -41,8 +45,8 @@ export default {
 				}"
         @swiper="onSwiper"
         @slideChange="onSlideChange"
-				class="pb-10"
-				>
+				class="lg:py-10 md:py-8 py-6"
+			>
         <swiper-slide>
           <div class="column">
             <img
@@ -152,19 +156,19 @@ export default {
 
 <style scoped>
 .column {
-  @apply xl:py-10 py-8 xl:px-7 px-5 rounded-e-sm flex lg:flex-row flex-col gap-5 shadow-xl;
+  @apply xl:py-10 sm:py-8 py-4 xl:px-7 sm:px-5 px-3 rounded-e-sm flex lg:flex-row flex-col sm:gap-5 gap-3 shadow-xl;
   border-radius: 15px 0px 15px 0px;
 }
 .column__image {
-  height: 40px;
+  @apply sm:h-10 h-7 sm:w-10 w-7;
 }
 .column__info {
   @apply flex flex-col gap-1.5;
 }
 .column__title {
-	@apply xl:text-2xl lg:text-xl md:text-lg text-base font-bold;
+	@apply xl:text-2xl lg:text-xl md:text-lg sm:text-base text-sm font-bold;
 }
 .column p {
-	@apply lg:text-base md:text-sm;
+	@apply lg:text-base md:text-sm text-xs;
 }
 </style>
